@@ -26,13 +26,11 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 60px 1fr 1fr 1fr 150px;
-  grid-template-areas: "header" "intro" "hero1" "hero2" "footer";
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
-body button {
+
+button {
   text-transform: capitalize;
   color: var(--white);
   padding: 1.2rem 3rem;
@@ -43,11 +41,11 @@ body button {
   background: linear-gradient(45deg, var(--limegreen), var(--brightcyan));
   cursor: pointer;
 }
-body button:hover {
+button:hover {
   background: linear-gradient(45deg, hsla(136deg, 65%, 51%, 0.46), var(--brightcyan));
 }
-body header {
-  grid-area: header;
+
+header {
   display: flex;
   padding: 0px 8rem;
   position: fixed;
@@ -61,28 +59,36 @@ body header {
   background: var(--white);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-body header nav {
+header nav {
   font-size: var(--fontsize);
   height: 100%;
   display: flex;
   align-items: center;
 }
-body header nav a {
+header nav a {
   margin: 0px 3rem 0px 0px;
   color: var(--grayyishblue);
   border-bottom: 1px solid transparent;
 }
-body header nav a:hover {
+header nav a:hover {
   border-bottom: 1px solid var(--limegreen);
 }
-body header #hamburger-open, body header #hamburger-close {
+header #hamburger-open,
+header #hamburger-close {
   background: none;
   display: none;
 }
-body section {
+
+main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "intro" "hero1" "hero2";
+}
+main section {
   min-height: 100vh;
 }
-body .intro {
+main .intro {
   grid-area: intro;
   display: flex;
   background-color: var(--verylightgrayishblue);
@@ -93,198 +99,198 @@ body .intro {
   background-position-y: -26rem;
   background-position-x: 55rem;
 }
-body .intro .text_button {
+main .intro .text_button {
   width: 50%;
   padding: 10rem;
 }
-body .intro .text_button h1,
-body .intro .text_button h2 {
+main .intro .text_button h1,
+main .intro .text_button h2 {
   margin: 0;
 }
-body .intro .text_button h1 {
+main .intro .text_button h1 {
   font-size: 5rem;
   font-weight: normal;
   color: var(--darkblue);
   margin: 0px 0px 3rem 0px;
 }
-body .intro .text_button h2 {
+main .intro .text_button h2 {
   color: var(--grayyishblue);
   font-size: 19px;
   font-weight: normal;
   line-height: 32px;
   margin: 0px 0px 3rem 0px;
 }
-body .intro .mock {
+main .intro .mock {
   width: 50%;
   overflow: hidden;
 }
-body .intro .mock img {
+main .intro .mock img {
   position: absolute;
   -o-object-fit: cover;
   object-fit: cover;
-  top: 60px;
   right: 0;
   -o-object-position: 130px -60px;
   object-position: 130px -120px;
 }
-body .hero1 {
+main .hero1 {
   grid-area: hero1;
   display: flex;
   flex-direction: column;
   background: var(--lightgrayishblue);
   padding: 5rem 12rem;
 }
-body .hero1 h1,
-body .hero1 h2 {
+main .hero1 h1,
+main .hero1 h2 {
   margin: 0;
 }
-body .hero1 h1 {
+main .hero1 h1 {
   font-size: 4rem;
   font-weight: normal;
   color: var(--darkblue);
   margin: 0px 0px 3rem 0px;
 }
-body .hero1 h2 {
+main .hero1 h2 {
   color: var(--grayyishblue);
   font-size: 1.53rem;
   font-weight: normal;
   line-height: 32px;
   margin: 0px 0px 3rem 0px;
 }
-body .hero1 .top {
+main .hero1 .top {
   margin-bottom: 3rem;
 }
-body .hero1 .flex {
+main .hero1 .flex {
   display: flex;
 }
-body .hero1 .flex div {
+main .hero1 .flex div {
   margin-right: 2rem;
 }
-body .hero1 .flex div img {
+main .hero1 .flex div img {
   margin-bottom: 3rem;
 }
-body .hero1 .flex div h1 {
+main .hero1 .flex div h1 {
   font-size: 2rem;
 }
-body .hero1 .flex div h2 {
+main .hero1 .flex div h2 {
   line-height: 30px;
 }
-body .hero2 {
+main .hero2 {
   grid-area: hero2;
   display: flex;
   flex-direction: column;
   background-color: var(--verylightgrayishblue);
   padding: 5rem 12rem;
 }
-body .hero2 h1,
-body .hero2 h2 {
+main .hero2 h1,
+main .hero2 h2 {
   margin: 0;
 }
-body .hero2 > h1 {
+main .hero2 > h1 {
   font-size: 4rem;
   font-weight: normal;
   color: var(--darkblue);
   margin: 0px 0px 3rem 0px;
 }
-body .hero2 .f-fullwidth {
+main .hero2 .f-fullwidth {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-body .hero2 .f-fullwidth div {
+main .hero2 .f-fullwidth div {
   background-color: var(--white);
   max-width: 250px;
   overflow: hidden;
   border-radius: 4px;
 }
-body .hero2 .f-fullwidth div img {
+main .hero2 .f-fullwidth div img {
   min-width: 100%;
   max-height: 200px;
   border-radius: 4px 4px 0px 0px;
 }
-body .hero2 .f-fullwidth div h1 {
+main .hero2 .f-fullwidth div h1 {
   font-size: 19px;
   font-weight: normal;
   color: var(--darkblue);
   padding: 1rem 2rem 0px;
   cursor: pointer;
 }
-body .hero2 .f-fullwidth div h1:hover {
+main .hero2 .f-fullwidth div h1:hover {
   color: var(--limegreen);
 }
-body .hero2 .f-fullwidth div p {
+main .hero2 .f-fullwidth div p {
   color: var(--grayyishblue);
   font-weight: 400;
   margin: 0;
   font-size: 12px;
   padding: 2.4rem 2rem 0px;
 }
-body .hero2 .f-fullwidth div h2 {
+main .hero2 .f-fullwidth div h2 {
   color: var(--grayyishblue);
   font-weight: 400;
   margin: 0;
   font-size: 14px;
   padding: 1rem 2rem 2rem;
 }
-body footer {
-  grid-area: footer;
+
+footer {
   padding: 4rem 12rem;
   display: flex;
   background-color: var(--darkblue);
   justify-content: space-between;
 }
-body footer .logo_socials {
+footer .logo_socials {
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: space-between;
 }
-body footer .logo_socials .socials {
+footer .logo_socials .socials {
   width: 100%;
   cursor: pointer;
 }
-body footer .logo_socials .socials img {
+footer .logo_socials .socials img {
   margin: 0px 1rem 0px 0px;
 }
-body footer .logo_socials .socials img:hover {
+footer .logo_socials .socials img:hover {
   filter: brightness(0) saturate(100%) invert(67%) sepia(40%) saturate(827%) hue-rotate(82deg) brightness(94%) contrast(87%);
 }
-body footer .links {
+footer .links {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 270px;
   flex-wrap: wrap;
-  height: 100%;
   justify-content: space-between;
+  align-items: flex-start;
 }
-body footer .links a {
-  margin: 0px 25rem 0px -80px;
+footer .links a {
+  /* margin: 0px 25rem 0px -80px; */
   color: var(--verylightgrayishblue);
   font-size: 16px;
   font-weight: 400;
   text-transform: capitalize;
   cursor: pointer;
+  width: 110px;
 }
-body footer .links a:hover {
+footer .links a:hover {
   color: var(--limegreen);
 }
-body footer .right p {
+footer .right p {
   font-size: 16px;
   color: var(--grayyishblue);
   text-transform: capitalize;
 }
 
 @media screen and (max-width: 980px) {
-  body {
-    grid-template-rows: 60px 350px 900px 1fr 150px;
-  }
-  body header {
+  header {
     min-height: 60px;
     padding: 0px 1rem;
   }
-  body header #hamburger-open {
+  header #hamburger-open {
     display: none;
   }
-  body .intro {
+  main {
+    grid-template-rows: 450px 1fr 1fr;
+  }
+  main .intro {
     flex-direction: row;
     background-image: none;
     text-align: left;
@@ -292,29 +298,30 @@ body footer .right p {
     background-image: url(../../images/bg-intro-mobile.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: 100%;
+    background-position-x: center;
+    background-position-y: -20%;
   }
-  body .intro .text_button {
+  main .intro .text_button {
     padding: 0;
     width: 50%;
     position: relative;
-    padding: 2rem 0px 0px 6rem;
+    padding: 12rem 0px 0px 6rem;
   }
-  body .intro .text_button h1 {
+  main .intro .text_button h1 {
     font-size: 3rem;
     margin: 0px 0px 1rem 0px;
     color: var(--verylightgrayishblue);
   }
-  body .intro .text_button h2 {
+  main .intro .text_button h2 {
     line-height: 28px;
     margin: 0px 0px 2rem 0px;
     color: #eee;
   }
-  body .intro .mock {
+  main .intro .mock {
     width: 50%;
     height: 50%;
   }
-  body .intro .mock img {
+  main .intro .mock img {
     position: absolute;
     -o-object-fit: cover;
     object-fit: cover;
@@ -324,76 +331,68 @@ body footer .right p {
     -o-object-position: 130px -60px;
     object-position: 70px -120px;
   }
-  body .hero1 {
+  main .hero1 {
     padding: 4rem 3rem;
     text-align: center;
   }
-  body .hero1 .flex {
+  main .hero1 .flex {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
   }
-  body .hero1 .flex div {
+  main .hero1 .flex div {
     max-width: 250px;
   }
-  body .hero2 {
+  main .hero2 {
     padding: 4rem 3rem;
     align-items: center;
   }
-  body .hero2 .f-fullwidth {
+  main .hero2 .f-fullwidth {
     align-items: center;
     justify-content: space-evenly;
   }
-  body .hero2 .f-fullwidth div {
+  main .hero2 .f-fullwidth div {
     margin-bottom: 3rem;
     max-width: 300px;
     max-height: 388px;
   }
-  body footer .right p {
-    font-size: 10px;
+  footer {
+    padding: 4rem 5rem;
   }
-  body footer .links {
+  footer .links {
+    width: 230px;
+  }
+  footer .right {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    margin-left: 0px;
-    justify-content: space-between;
-  }
-  body footer .links a {
-    margin: 4px;
-    color: var(--verylightgrayishblue);
-    font-size: 13px;
-    font-weight: 400;
-    text-transform: capitalize;
-    cursor: pointer;
+    align-items: flex-end;
   }
 }
 @media screen and (max-width: 700px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-  body header {
+  header {
     min-height: 60px;
     padding: 0px 1rem;
   }
-  body header nav {
+  header nav {
     display: none;
   }
-  body header button {
+  header button {
     display: none;
   }
-  body header #hamburger-open {
+  header #hamburger-open {
     display: block;
   }
-  body .intro {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  main .intro {
     flex-direction: column-reverse;
     background-image: none;
     text-align: center;
     min-height: 800px;
   }
-  body .intro .text_button {
+  main .intro .text_button {
     padding: 0;
     width: 100%;
     height: 50%;
@@ -401,15 +400,15 @@ body footer .right p {
     padding: 2rem 2rem 0px;
     /* margin: -10rem 0px; */
   }
-  body .intro .text_button h1 {
+  main .intro .text_button h1 {
     font-size: 3rem;
     color: var(--darkblue);
   }
-  body .intro .text_button h2 {
+  main .intro .text_button h2 {
     color: initial;
     color: var(--grayishblue);
   }
-  body .intro .mock {
+  main .intro .mock {
     width: 100%;
     height: 50%;
     position: relative;
@@ -418,7 +417,7 @@ body footer .right p {
     background-repeat: no-repeat;
     background-position: 100%;
   }
-  body .intro .mock img {
+  main .intro .mock img {
     position: absolute;
     -o-object-fit: cover;
     object-fit: cover;
@@ -430,81 +429,80 @@ body footer .right p {
     -o-object-position: 130px -60px;
     object-position: 0px -130px;
   }
-  body .hero1 {
+  main .hero1 {
     padding: 4rem 3rem;
     text-align: center;
   }
-  body .hero1 .flex {
+  main .hero1 .flex {
     flex-direction: column;
   }
-  body .hero2 {
+  main .hero2 {
     padding: 4rem 3rem;
     align-items: center;
   }
-  body .hero2 .f-fullwidth {
+  main .hero2 .f-fullwidth {
     flex-direction: column;
   }
-  body .hero2 .f-fullwidth div {
+  main .hero2 .f-fullwidth div {
     margin-bottom: 3rem;
     max-width: 300px;
   }
-  body footer {
+  footer {
     gap: 3rem;
     padding: 0px;
     padding: 4rem 3rem;
     flex-direction: column;
     align-items: center;
   }
-  body footer .logo_socials {
+  footer .logo_socials {
     display: flex;
     gap: 3rem;
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
   }
-  body footer .logo_socials .whitelogo {
+  footer .logo_socials .whitelogo {
     max-width: 240px;
   }
-  body footer .links {
+  footer .links {
     display: flex;
+    text-align: center;
     flex-direction: column;
+    width: 270px;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
   }
-  body footer .links a {
-    margin: 0px;
-  }
-  body footer .right {
+  footer .right {
     display: flex;
     align-items: center;
     flex-direction: column;
   }
 }
 @media screen and (max-width: 375px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-  body header {
+  header {
     min-height: 60px;
     padding: 0px 1rem;
   }
-  body header nav {
+  header nav {
     display: none;
   }
-  body header button {
+  header button {
     display: none;
   }
-  body header #hamburger-open {
+  header #hamburger-open {
     display: block;
   }
-  body .intro {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  main .intro {
     flex-direction: column-reverse;
     background-image: none;
     text-align: center;
     min-height: 800px;
   }
-  body .intro .text_button {
+  main .intro .text_button {
     padding: 0;
     width: 100%;
     height: 50%;
@@ -512,15 +510,15 @@ body footer .right p {
     padding: 2rem 2rem 0px;
     /* margin: -10rem 0px; */
   }
-  body .intro .text_button h1 {
+  main .intro .text_button h1 {
     font-size: 3rem;
     color: var(--darkblue);
   }
-  body .intro .text_button h2 {
+  main .intro .text_button h2 {
     color: initial;
     color: var(--grayishblue);
   }
-  body .intro .mock {
+  main .intro .mock {
     width: 100%;
     height: 50%;
     position: relative;
@@ -528,7 +526,7 @@ body footer .right p {
     background-repeat: no-repeat;
     background-position: 100%;
   }
-  body .intro .mock img {
+  main .intro .mock img {
     position: absolute;
     -o-object-fit: cover;
     object-fit: cover;
@@ -540,51 +538,51 @@ body footer .right p {
     -o-object-position: 130px -60px;
     object-position: 0px -130px;
   }
-  body .hero1 {
+  main .hero1 {
     padding: 4rem 3rem;
     text-align: center;
   }
-  body .hero1 .flex {
+  main .hero1 .flex {
     flex-direction: column;
   }
-  body .hero2 {
+  main .hero2 {
     padding: 4rem 3rem;
     align-items: center;
   }
-  body .hero2 .f-fullwidth {
+  main .hero2 .f-fullwidth {
     flex-direction: column;
   }
-  body .hero2 .f-fullwidth div {
+  main .hero2 .f-fullwidth div {
     margin-bottom: 3rem;
     max-width: 300px;
   }
-  body footer {
+  footer {
     gap: 3rem;
     padding: 0px;
     padding: 4rem 3rem;
     flex-direction: column;
     align-items: center;
   }
-  body footer .logo_socials {
+  footer .logo_socials {
     display: flex;
     gap: 3rem;
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
   }
-  body footer .logo_socials .whitelogo {
+  footer .logo_socials .whitelogo {
     max-width: 240px;
   }
-  body footer .links {
+  footer .links {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-  body footer .links a {
+  footer .links a {
     margin: 0px;
   }
-  body footer .right {
+  footer .right {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -609,17 +607,24 @@ button#backup {
 }
 
 #overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
 }
 
 #menu {
